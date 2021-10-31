@@ -1,0 +1,6 @@
+applications:
+- name: dwiali2021
+  memory: 32M
+  buildpacks:
+    - https://github.com/cloudfoundry/staticfile-buildpack
+  path: ./build/

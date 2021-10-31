@@ -13,46 +13,51 @@ class FetchOptions {
     }
   }
 
-  post(data) {
+  async post(url, data) {
     this.addToken();
-    return {
+    return await fetch(url, {
       headers,
       method: 'POST',
       body: JSON.stringify(data),
-    }
+    });
   }
 
-  get() {
+  async get(url) {
     this.addToken();
-    return {
+    return await fetch(url, {
       method: 'GET',
       headers,
-    }
+    });
   }
 
-  put(data) {
+  async put(url, data) {
     this.addToken();
-    return {
+    return await fetch(url, {
       method: 'PUT',
       body: JSON.stringify(data),
       headers,
-    }
+    });
   }
 
-  delete() {
+  async delete(url) {
     this.addToken();
-    return {
+    return await fetch(url, {
       method: 'DELETE',
       headers,
-    }
+    });
   }
 }
 
 const options = new FetchOptions();
 
 export default {
-  getOrders: async (limit = 15, search = "") => {
-    const result = await fetch(`${URL}/all`, options.post({ limit, search }));
+  getOrders: async (...data) => {
+    const result = await options.post(`${URL}/all`, ...data);
+    return await result.json();
+  },
+
+  submitOrder: async (id) => {
+    const result = await options.post(`${URL}/submit-order`, { id });
     return await result.json();
   }
 }

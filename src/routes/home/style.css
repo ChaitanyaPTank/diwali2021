@@ -90,6 +90,8 @@ tr:nth-child(even) {
   border: none;
   color: #fafafa;
   border-radius: 4px;
+  cursor: pointer;
+  /* margin: 0rem 0.5rem; */
 }
 
 .orderinfo {
@@ -104,4 +106,29 @@ tr:nth-child(even) {
   font-size: small;
   width: 400px;
   border-radius: 4px;
+}
+
+.isordered {
+  color: #333;
+  background-color: #ffff00;
+  display: flex;
+  padding: 0rem 0rem 0rem 0.5rem;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@media print {
+  .print {
+    background-color: white;
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    margin: 0;
+    padding: 15px;
+    font-size: 14px;
+    line-height: 18px;
+  }
 }

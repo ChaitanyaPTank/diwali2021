@@ -32,17 +32,16 @@
 	padding: 0 15px;
 	min-width: 50px;
 	text-align: center;
-	background: rgba(255,255,255,0);
+	background: rgba(255, 255, 255, 0);
 	text-decoration: none;
 	color: #FFF;
 	will-change: background-color;
 }
 
-.header nav a:hover,
-.header nav a:active {
-	background: rgba(0,0,0,0.2);
+.header nav a:hover, .header nav a:active {
+	background: rgba(0, 0, 0, 0.2);
 }
 
 .header nav a.active {
-	background: rgba(0,0,0,0.4);
+	background: rgba(0, 0, 0, 0.4);
 }
