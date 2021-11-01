@@ -15,8 +15,8 @@ const SearchBar = (props) => {
         <input placeholder="Search..." type="text" onKeyUp={handleSearch} />
       </div>
       <div style="display: flex; align-items: center; justify-content: center;">
-        <input type="checkbox" checked={searchOrdered} onChange={toggleOrdered} />
-        <label htmlFor="ordered">Search Ordered</label>
+        <input style="width: 16px; margin: 0.5rem;" type="checkbox" checked={searchOrdered} onChange={toggleOrdered} />
+        <label htmlFor="ordered" onClick={toggleOrdered}>Search ordered</label>
       </div>
       <ul>
         <li onClick={() => { setLimit(5) }}>5</li>
