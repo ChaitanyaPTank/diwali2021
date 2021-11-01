@@ -1,0 +1,72 @@
+.container {
+  background-color: #e0e0e0;
+  margin: 0rem 0.5rem;
+  padding: 1rem;
+  border-radius: 4px;
+  width: 600px;
+  display: flex;
+  flex-direction: column;
+  margin-top: 64px;
+}
+
+input {
+  height: 24px;
+  border: none;
+  padding: 0.5rem;
+  margin-bottom: 4px;
+  border-radius: 4px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 150px 300px 100px;
+}
+
+p {
+  margin: auto;
+}
+
+button {
+  cursor: pointer;
+  background-color: #087bff;
+  color: #fafafa;
+  padding: 0.5rem 0.5rem;
+  border: none;
+  margin: 0.35rem 0rem 0rem 0rem;
+  border-radius: 4px;
+}
+
+.orderinfo {
+  background-color: #333;
+  color: #fafafa;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  margin-left: 0.75rem;
+  margin-bottom: 0.5rem;
+  font-size: small;
+  width: 400px;
+  border-radius: 4px;
+}
+
+@media print {
+  .print {
+    background-color: white;
+    color: #333;
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    margin: 0;
+    padding: 15px;
+    font-size: 14px;
+    line-height: 4px;
+  }
+  .orderinfo {
+    color: #333;
+  }
+  button, .grid, .expand, .top {
+    display: none;
+  }
+}
