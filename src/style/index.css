@@ -1,37 +1,37 @@
 html, body {
-	height: 100%;
-	width: 100%;
-	padding: 0;
-	margin: 0;
-	background: #FAFAFA;
-	font-family: 'Inconsolata', monospace;
-	font-weight: 400;
-	color: #333;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  background: #FAFAFA;
+  font-family: 'Inconsolata', monospace;
+  font-weight: 400;
+  color: #333;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 * {
-	box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 #app {
-	height: 100%;
+  height: 100%;
 }
 
 @media print {
-	@page {
-		/* size: A5 portrait; */
-		margin: 5mm;
-		color: #333;
-	}
-	header {
-		display: none;
-	}
-	button {
-		display: none;
-	}
-	expand {
-		display: none;
-	}
+  @page {
+    /* size: A5 portrait; */
+    margin: 5mm;
+    color: #333;
+  }
+  header {
+    display: none;
+  }
+  button {
+    display: none;
+  }
+  expand {
+    display: none;
+  }
 }

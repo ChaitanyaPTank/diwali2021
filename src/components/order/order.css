@@ -1,0 +1,41 @@
+.isordered {
+  color: #333;
+  background-color: #ffff00;
+  display: flex;
+  padding: 0rem 0rem 0rem 0.5rem;
+  width: 100%;
+  margin: 0.25rem 0rem;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 4px;
+}
+
+.row {
+  display: inline;
+  margin: 0;
+  padding: 0.5rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 50px 400px 150px;
+}
+
+.order {
+  color: #333;
+  background-color: #e0e0e0;
+  display: flex;
+  padding: 0rem 0rem 0rem 0.5rem;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0.25rem 0rem;
+}
+
+.expand {
+  cursor: pointer;
+  background-color: #087bff;
+  color: #fafafa;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+}
