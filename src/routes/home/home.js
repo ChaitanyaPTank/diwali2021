@@ -43,16 +43,15 @@ const Home = () => {
   return (
     <div className={style.home}>
       <SearchBar handlers={{ handleSearch, setLimit, toggleOrdered, searchOrdered }} />
-      <div className={style.container}>
-        <div>
-          {data.length
-            ? <div className={style.tabl}>
-              {data}
-            </div>
-            : "No order found"}
+      {/* <div className={style.container}> */}
+      {/* <div> */}
+      {data.length
+        ? <div className={style.tabl}>
+          {data}
         </div>
-        <AddOrder />
-      </div>
+        : "No order found"}
+      {/* </div> */}
+      {/* </div> */}
     </div >
   )
 };

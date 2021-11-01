@@ -4,6 +4,7 @@ import { price } from '../../data.json';
 
 const Details = (props) => {
   const { data, id, orderStatus } = props;
+  const { name, mobile, ...rest } = data;
   const [order, setOrder] = useState([]);
   const [total, setTotal] = useState(0);
 
@@ -24,7 +25,7 @@ const Details = (props) => {
 
   useEffect(() => {
     let total = 0;
-    setOrder(Object.entries(data).map(([item, weight]) => {
+    setOrder(Object.entries(rest).map(([item, weight]) => {
       if (weight) {
         total += weight * price[item] * 2;
         return (
