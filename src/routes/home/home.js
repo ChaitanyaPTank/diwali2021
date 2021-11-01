@@ -2,30 +2,7 @@
 import style from './style.css';
 import apiService from '../../services/api';
 import { useState, useEffect } from 'preact/hooks';
-
-const price = {
-  kaju_mesub: 450,
-  kaju_kasata: 400,
-  kaju_katri: 360,
-  anjeer_patra: 400,
-  surti_ghari: 320,
-  ghughra: 210,
-  khajur_roll: 200,
-  adadiya: 200,
-  mohanthal: 150,
-  sata: 100,
-  pauva_chevdo: 75,
-  tikha_gathiya: 80,
-  flower_gathiya: 80,
-  alu_sev: 80,
-  tikhi_papdi: 90,
-  tikhu_chavanu: 80,
-  nankhatai: 90,
-  pista_biscuits: 90,
-  pista_biscuit: 90,
-  cholafali: 110,
-  mathiya: 110
-}
+import { price } from '../../data.json'
 
 const Home = () => {
   const [data, setData] = useState([]);
@@ -38,7 +15,7 @@ const Home = () => {
       const { data } = await apiService.getOrders({ limit, search, ordered: searchOrdered });
       setData(data.map((item, index) => {
         return (
-          <Order item={item} index={index} />
+          <Order item={item} index={index} key={index} />
         )
       }));
     };
@@ -58,7 +35,7 @@ const Home = () => {
     clearTimeout(timeOut);
     timeOut = setTimeout(() => {
       setSearch(e.target.value);
-    }, 250);
+    }, 300);
   }
 
   return (
@@ -126,45 +103,51 @@ const Order = (props) => {
 
 const Details = (props) => {
   const { data, id, orderStatus } = props;
-  let total = 0;
-  const orderArray = [];
+  const [order, setOrder] = useState([]);
+  const [total, setTotal] = useState(0);
 
   const handleSubmitOrder = async () => {
-    console.log(id);
-    const updated = apiService.submitOrder(id);
-    console.log(updated);
-  }
-
-  const printReciept = () => {
-    // const my_window = window.open('', 'mywindow', 'status=1,width=350,height=150');
-    // my_window.document.write('<html><head><title>Print Me</title></head>');
-    // my_window.document.write('<body onafterprint="self.close()">');
-    // my_window.document.write('<p>When you print this window, it will close afterward.</p>');
-    // my_window.document.write('</body></html>');
-    window.print();
-  }
-
-  // iterating over object as objects are not valid as childrens
-  for (let orderItem in data) {
-    if (data[orderItem]) {
-      total += data[orderItem] * price[orderItem] * 2;
-      orderArray.push(
-        <p>
-          <strong>{orderItem.split("_").join(" ").toUpperCase()} </strong>
-          : {data[orderItem]} Kg
-          : {data[orderItem] * price[orderItem] * 2} Rs
-        </p>
-      );
+    const { code, result } = await apiService.submitOrder(id);
+    if (code === 200) {
+      window.print();
     }
   }
 
+  // const printReciept = () => {
+  // const my_window = window.open('', 'mywindow', 'status=1,width=350,height=150');
+  // my_window.document.write('<html><head><title>Print Me</title></head>');
+  // my_window.document.write('<body onafterprint="self.close()">');
+  // my_window.document.write('<p>When you print this window, it will close afterward.</p>');
+  // my_window.document.write('</body></html>');
+  // }
+
+  useEffect(() => {
+    let total = 0;
+    setOrder(Object.entries(data).map(([item, weight]) => {
+      if (weight) {
+        total += weight * price[item] * 2;
+        return (
+          <p>
+            <strong>{item.split("_").join(" ").toUpperCase()} </strong>
+            : {weight} Kg
+            = {weight * price[item] * 2} Rs
+          </p>
+        )
+      }
+    }));
+    setTotal(total);
+  }, [data]);
+
   return (
     <>
-      <div className={style.orderinfo} className={style.print}>
-        {orderArray}
-        <p><strong>Total</strong> : {total}</p>
-        {orderStatus !== true && <button onClick={handleSubmitOrder}>Submit</button>}
-        <button onCLick={printReciept}>Print</button>
+      <div className={style.print}>
+        <div className={style.orderinfo}>
+          {order}
+          <p><strong>TOTAL</strong> : {total}</p>
+          {orderStatus !== true
+            ? <button onClick={handleSubmitOrder}>SUBMIT</button>
+            : <button onCLick={() => window.print()}>PRINT</button>}
+        </div>
       </div>
     </>
   )

@@ -6,7 +6,7 @@ html, body {
 	background: #FAFAFA;
 	font-family: 'Inconsolata', monospace;
 	font-weight: 400;
-	color: #444;
+	color: #333;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 }
@@ -21,10 +21,17 @@ html, body {
 
 @media print {
 	@page {
-		size: A5 portrait;
+		/* size: A5 portrait; */
 		margin: 5mm;
+		color: #333;
+	}
+	header {
+		display: none;
 	}
 	button {
+		display: none;
+	}
+	expand {
 		display: none;
 	}
 }

@@ -1,0 +1,25 @@
+{
+	"price": {
+		"kaju_mesub": 450,
+		"kaju_kasata": 400,
+		"kaju_katri": 360,
+		"anjeer_patra": 400,
+		"surti_ghari": 320,
+		"ghughra": 210,
+		"khajur_roll": 200,
+		"adadiya": 200,
+		"mohanthal": 150,
+		"sata": 100,
+		"pauva_chevdo": 75,
+		"tikha_gathiya": 80,
+		"flower_gathiya": 80,
+		"alu_sev": 80,
+		"tikhi_papdi": 90,
+		"tikhu_chavanu": 80,
+		"nankhatai": 90,
+		"pista_biscuits": 90,
+		"pista_biscuit": 90,
+		"cholafali": 110,
+		"mathiya": 110
+	}
+}
