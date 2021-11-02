@@ -1,11 +1,11 @@
 import { Router } from 'preact-router';
 
-import Header from './header/header';
+import Header from './header/header.js';
 
 // Code-splitting is automated for `routes` directory
-import Home from '../routes/home/home';
-import Stock from '../routes/stock/stock';
-import AddOrder from './add-order/add-order';
+import Home from '../routes/home/home.js';
+import Stock from '../routes/stock/stock.js';
+import NewOrder from '../routes/new-orders/new-orders.js';
 
 const App = () => (
   <div id="app">
@@ -13,7 +13,7 @@ const App = () => (
     <Router>
       <Home path="/" />
       <Stock path="/stock" />
-      <AddOrder path="/add-order" />
+      <NewOrder path="/new-order" />
     </Router>
   </div>
 )

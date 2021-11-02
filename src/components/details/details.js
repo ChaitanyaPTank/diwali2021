@@ -3,25 +3,21 @@ import style from './details.css';
 import { price } from '../../data.json';
 
 const Details = (props) => {
-  const { data, id, orderStatus } = props;
+  const { data, orderStatus, submitApi } = props;
+  console.log(data);
   const { name, mobile, ...rest } = data;
   const [order, setOrder] = useState([]);
   const [total, setTotal] = useState(0);
+  const [status, setStatus] = useState(orderStatus);
 
   const handleSubmitOrder = async () => {
-    const { code, result } = await apiService.submitOrder(id);
+    const { code, result } = await submitApi();
+    console.log({ code, result });
     if (code === 200) {
+      setStatus(true);
       window.print();
     }
   }
-
-  // const printReciept = () => {
-  // const my_window = window.open('', 'mywindow', 'status=1,width=350,height=150');
-  // my_window.document.write('<html><head><title>Print Me</title></head>');
-  // my_window.document.write('<body onafterprint="self.close()">');
-  // my_window.document.write('<p>When you print this window, it will close afterward.</p>');
-  // my_window.document.write('</body></html>');
-  // }
 
   useEffect(() => {
     let total = 0;
@@ -44,11 +40,16 @@ const Details = (props) => {
     <>
       <div className={style.print}>
         <div className={style.orderinfo}>
+          <p>
+            <strong>
+              {name && name.toUpperCase()}
+            </strong>
+          </p>
           {order}
           <p><strong>TOTAL</strong> : {total}</p>
-          {orderStatus !== true
-            ? <button onClick={handleSubmitOrder}>SUBMIT</button>
-            : <button onCLick={() => window.print()}>PRINT</button>}
+          {status !== true
+            ? <button onClick={handleSubmitOrder}><strong>SUBMIT</strong></button>
+            : <button onCLick={() => window.print()}><strong>PRINT</strong></button>}
         </div>
       </div>
     </>

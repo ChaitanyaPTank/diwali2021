@@ -1,0 +1,11 @@
+.container {
+  margin-top: 64px;
+  display: flex;
+  justify-content: center;
+}
+
+@media print {
+  button, .grid, .expand, .top {
+    display: none;
+  }
+}

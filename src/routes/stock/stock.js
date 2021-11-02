@@ -8,18 +8,21 @@ const Stock = () => {
   useEffect(() => {
     (async () => {
       const result = await apiService.getStock();
-      setStock(Object.entries(result.data.stock).map(([key, val], index) => {
-        return (
-          <>
-            <p className={style.row}>
-              <strong> {index + 1}. </strong>
-              <strong> {key.toUpperCase()} </strong>
-              <strong> {val} Kg </strong>
-              <strong> {result.data.order[key]} Kg </strong>
-            </p>
-          </>
-        )
-      }))
+      console.log(result);
+      if (result.data) {
+        setStock(Object.entries(result.data.stock).map(([key, val], index) => {
+          return (
+            <>
+              <p className={style.row}>
+                <strong> {index + 1}. </strong>
+                <strong> {key.toUpperCase()} </strong>
+                <strong> {parseFloat(result.data.order[key]).toFixed(2)} Kg </strong>
+                <strong> {val.toFixed(2)} Kg </strong>
+              </p>
+            </>
+          )
+        }))
+      }
       // console.log(result);
     })();
   }, []);

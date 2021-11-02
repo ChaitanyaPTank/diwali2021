@@ -1,9 +1,9 @@
 html, body {
-  height: 100%;
+  /* height: 100%; */
   width: 100%;
   padding: 0;
   margin: 0;
-  background: #FAFAFA;
+  background: #ffffff;
   font-family: 'Inconsolata', monospace;
   font-weight: 400;
   color: #333;
@@ -15,23 +15,19 @@ html, body {
   box-sizing: border-box;
 }
 
-#app {
-  height: 100%;
-}
-
 @media print {
   @page {
     /* size: A5 portrait; */
     margin: 5mm;
     color: #333;
   }
-  header {
+  .header {
     display: none;
   }
   button {
     display: none;
   }
-  expand {
+  .expand {
     display: none;
   }
 }

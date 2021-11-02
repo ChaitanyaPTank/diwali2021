@@ -1,10 +1,9 @@
 // import { h } from 'preact';
-import style from './style.css';
+import style from './home.css';
 import apiService from '../../services/api';
 import { useState, useEffect } from 'preact/hooks';
 import Order from '../../components/order/order';
 import SearchBar from '../../components/search/search';
-import AddOrder from '../../components/add-order/add-order';
 
 const Home = () => {
   const [data, setData] = useState([]);
@@ -43,15 +42,11 @@ const Home = () => {
   return (
     <div className={style.home}>
       <SearchBar handlers={{ handleSearch, setLimit, toggleOrdered, searchOrdered }} />
-      {/* <div className={style.container}> */}
-      {/* <div> */}
       {data.length
         ? <div className={style.tabl}>
           {data}
         </div>
         : "No order found"}
-      {/* </div> */}
-      {/* </div> */}
     </div >
   )
 };
