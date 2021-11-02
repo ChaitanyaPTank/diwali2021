@@ -35,38 +35,3 @@ button {
   margin: 0.35rem 0rem 0rem 0rem;
   border-radius: 4px;
 }
-
-.orderinfo {
-  background-color: #333;
-  color: #fafafa;
-  display: flex;
-  flex-direction: column;
-  padding: 1rem;
-  margin-left: 0.75rem;
-  margin-bottom: 0.5rem;
-  font-size: small;
-  width: 400px;
-  border-radius: 4px;
-}
-
-@media print {
-  /* .newprint {
-    background-color: white;
-    color: #333;
-    height: 100%;
-    width: 100%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    margin: 0;
-    padding: 15px;
-    font-size: 16px;
-    line-height: 8px;
-  }
-  .orderinfo {
-    color: #333;
-  }
-  .child button, .grid, .expand, .top {
-    display: none;
-  } */
-}

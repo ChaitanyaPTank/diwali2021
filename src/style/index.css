@@ -21,13 +21,13 @@ html, body {
     margin: 5mm;
     color: #333;
   }
-  header {
+  .header {
     display: none;
   }
   button {
     display: none;
   }
-  expand {
+  .expand {
     display: none;
   }
 }

@@ -22,7 +22,7 @@
   button {
     display: none;
   }
-  .expand, .home {
+  .expand {
     display: none;
   }
 }
