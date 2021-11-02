@@ -18,7 +18,6 @@ const GetNewOrder = () => {
     }, 300);
   }
 
-
   const toggleOrdered = () => {
     setSearchOrdered(!searchOrdered);
   }
@@ -42,9 +41,11 @@ const GetNewOrder = () => {
 
   return (
     <div style="display: flex; flex-direction: column;">
-      <SearchBar handlers={{ handleSearch, setLimit, toggleOrdered, searchOrdered }} />
+      <div className={style.search}>
+        <SearchBar handlers={{ handleSearch, setLimit, toggleOrdered, searchOrdered }} />
+      </div>
       {data.length
-        ? <div className={style.tabl}>
+        ? <div className={style.table}>
           {data}
         </div>
         : "No order found"}

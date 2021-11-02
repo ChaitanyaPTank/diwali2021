@@ -1,5 +1,5 @@
 // import { h } from 'preact';
-import style from './style.css';
+import style from './home.css';
 import apiService from '../../services/api';
 import { useState, useEffect } from 'preact/hooks';
 import Order from '../../components/order/order';

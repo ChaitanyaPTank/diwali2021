@@ -3,11 +3,11 @@ import style from './details.css';
 import { price } from '../../data.json';
 
 const Details = (props) => {
-  const { data, id, orderStatus, submitApi } = props;
+  const { data, orderStatus, submitApi } = props;
+  console.log(data);
   const { name, mobile, ...rest } = data;
   const [order, setOrder] = useState([]);
   const [total, setTotal] = useState(0);
-  console.log(orderStatus)
   const [status, setStatus] = useState(orderStatus);
 
   const handleSubmitOrder = async () => {
@@ -40,6 +40,11 @@ const Details = (props) => {
     <>
       <div className={style.print}>
         <div className={style.orderinfo}>
+          <p>
+            <strong>
+              {name && name.toUpperCase()}
+            </strong>
+          </p>
           {order}
           <p><strong>TOTAL</strong> : {total}</p>
           {status !== true

@@ -7,7 +7,6 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  margin-top: 64px;
 }
 
 input {
@@ -51,7 +50,7 @@ button {
 }
 
 @media print {
-  .newprint {
+  /* .newprint {
     background-color: white;
     color: #333;
     height: 100%;
@@ -67,7 +66,7 @@ button {
   .orderinfo {
     color: #333;
   }
-  button, .grid, .expand, .top {
+  .child button, .grid, .expand, .top {
     display: none;
-  }
+  } */
 }

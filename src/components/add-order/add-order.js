@@ -2,7 +2,6 @@ import style from './add-order.css';
 import { useState } from 'preact/hooks';
 import Details from '../details/details';
 import apiService from '../../services/api';
-import GetNewOrder from '../new-orders/get-new-orders';
 import { price } from '../../data.json';
 
 const AddOrder = (props) => {
@@ -31,6 +30,7 @@ const AddOrder = (props) => {
     cholafali: '',
     mathiya: '',
   });
+  const excluded = ['name', 'mobile']
 
   const handleInput = (field, value) => {
     setForm({ ...form, [field]: value });
@@ -43,10 +43,11 @@ const AddOrder = (props) => {
   return (
     <div>
       <div className={style.container} >
-        <div className={style.child}>
+        <div>
           {Object.entries(form).map(([key, val]) => {
             return (<OrderItem
               field={key}
+              type={!excluded.includes(key) ? "number" : "text"}
               value={val}
               label={key.split("_").join(" ")}
               handler={handleInput}
@@ -54,11 +55,8 @@ const AddOrder = (props) => {
           })}
           <button onClick={handleSubmit}>Submit</button>
         </div>
-        <div style="margin-left:100px; margin-top: -1rem;">
-          <GetNewOrder />
-        </div>
       </div>
-      {render && <div>
+      {render && <div className={style.child}>
         <Details data={form} url="/add-order" submitApi={() => apiService.addNewOrder(form)} />
       </div>}
     </div>

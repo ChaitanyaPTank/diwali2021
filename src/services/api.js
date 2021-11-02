@@ -1,5 +1,8 @@
-const URL = 'http://192.168.0.100:8085'
+// const URL = 'http://192.168.0.100:8085'
 // const URL = 'https://diwali2021backend.eu-gb.mybluemix.net'
+
+const URL = 'http://localhost:8085'
+
 const headers = {
   "Content-Type": "application/json",
 }

@@ -25,7 +25,7 @@
 @media print {
   .print {
     background-color: white;
-    color: #333;
+    color: #000;
     height: 100%;
     width: 100%;
     position: fixed;
@@ -34,7 +34,7 @@
     margin: 0;
     padding: 15px;
     font-size: 14px;
-    line-height: 8px;
+    line-height: 16px;
   }
   .orderinfo {
     color: #333;

@@ -5,7 +5,7 @@ import style from './order.css';
 
 const Order = (props) => {
   const { item, index } = props;
-  const { _id, name, mobile, ordered, ...orderData } = item;
+  const { _id, ordered, ...orderData } = item;
   const [isOrderVisible, setVisibility] = useState(false);
 
   return (
