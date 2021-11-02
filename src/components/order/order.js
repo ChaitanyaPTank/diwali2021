@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'preact/hooks';
 import Details from '../details/details';
+import apiService from '../../services/api';
 import style from './order.css';
 
 const Order = (props) => {
@@ -19,7 +20,11 @@ const Order = (props) => {
           {isOrderVisible ? "Collapse" : "Expand"}
         </div>
       </div>
-      {isOrderVisible && <Details data={orderData} orderStatus={ordered} id={_id} />}
+      {isOrderVisible && <Details
+        data={orderData}
+        orderStatus={ordered}
+        submitApi={() => apiService.submitOrder(_id)}
+      />}
     </div>
   );
 }

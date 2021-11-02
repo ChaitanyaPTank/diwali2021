@@ -1,19 +1,32 @@
-// import { h } from 'preact';
-import style from './style.css';
+import SearchBar from "../search/search";
 import apiService from '../../services/api';
 import { useState, useEffect } from 'preact/hooks';
-import Order from '../../components/order/order';
-import SearchBar from '../../components/search/search';
+import Order from "../order/order";
+import style from "./get-new-orders.css";
 
-const Home = () => {
+const GetNewOrder = () => {
   const [data, setData] = useState([]);
   const [limit, setLimit] = useState(15);
   const [search, setSearch] = useState('');
   const [searchOrdered, setSearchOrdered] = useState(false);
 
+  let timeOut;
+  const handleSearch = (e) => {
+    clearTimeout(timeOut);
+    timeOut = setTimeout(() => {
+      setSearch(e.target.value);
+    }, 300);
+  }
+
+
+  const toggleOrdered = () => {
+    setSearchOrdered(!searchOrdered);
+  }
+
   useEffect(() => {
     const getOrders = async () => {
-      const { data } = await apiService.getOrders({ limit, search, ordered: searchOrdered });
+      const { data } = await apiService.getNewOrders({ limit, search });
+      console.log(data);
       setData(data.map((item, index) => {
         return (
           <Order item={item} index={index} key={index} />
@@ -27,28 +40,16 @@ const Home = () => {
     }
   }, [limit, search, searchOrdered]);
 
-  const toggleOrdered = () => {
-    setSearchOrdered(!searchOrdered);
-  }
-
-  let timeOut;
-  const handleSearch = (e) => {
-    clearTimeout(timeOut);
-    timeOut = setTimeout(() => {
-      setSearch(e.target.value);
-    }, 300);
-  }
-
   return (
-    <div className={style.home}>
+    <div style="display: flex; flex-direction: column;">
       <SearchBar handlers={{ handleSearch, setLimit, toggleOrdered, searchOrdered }} />
       {data.length
         ? <div className={style.tabl}>
           {data}
         </div>
         : "No order found"}
-    </div >
+    </div>
   )
-};
+}
 
-export default Home;
+export default GetNewOrder;

@@ -1,4 +1,4 @@
-const URL = 'http://localhost:8085'
+const URL = 'http://192.168.0.100:8085'
 // const URL = 'https://diwali2021backend.eu-gb.mybluemix.net'
 const headers = {
   "Content-Type": "application/json",
@@ -63,8 +63,18 @@ export default {
     return { code: result.status, result: await result.json() };
   },
 
+  addNewOrder: async (form) => {
+    const result = await options.post(`${URL}/add-order`, form);
+    return { code: result.status, result: await result.json() };
+  },
+
   getStock: async () => {
     const result = await options.get(`${URL}/get-stock`);
+    return await result.json();
+  },
+
+  getNewOrders: async (...data) => {
+    const result = await options.post(`${URL}/new-orders`, ...data);
     return await result.json();
   }
 }

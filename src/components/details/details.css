@@ -17,6 +17,7 @@
   margin-left: 0.75rem;
   margin-bottom: 0.5rem;
   font-size: small;
+  text-align: left;
   width: 400px;
   border-radius: 4px;
 }
@@ -33,10 +34,11 @@
     margin: 0;
     padding: 15px;
     font-size: 14px;
-    line-height: 4px;
+    line-height: 8px;
   }
   .orderinfo {
     color: #333;
+    background-color: #ffffff;
   }
   button, .grid, .expand, .top {
     display: none;

@@ -3,9 +3,10 @@
   margin: 0rem 0.5rem;
   padding: 1rem;
   border-radius: 4px;
-  width: 600px;
+  width: 500px;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  justify-content: space-between;
   margin-top: 64px;
 }
 
@@ -19,11 +20,11 @@ input {
 
 .grid {
   display: grid;
-  grid-template-columns: 150px 300px 100px;
+  grid-template-columns: 140px 150px 100px;
 }
 
 p {
-  margin: auto;
+  margin: 4px 4px;
 }
 
 button {
@@ -50,7 +51,7 @@ button {
 }
 
 @media print {
-  .print {
+  .newprint {
     background-color: white;
     color: #333;
     height: 100%;
@@ -60,8 +61,8 @@ button {
     left: 0;
     margin: 0;
     padding: 15px;
-    font-size: 14px;
-    line-height: 4px;
+    font-size: 16px;
+    line-height: 8px;
   }
   .orderinfo {
     color: #333;

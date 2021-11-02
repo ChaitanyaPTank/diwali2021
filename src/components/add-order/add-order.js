@@ -1,6 +1,9 @@
 import style from './add-order.css';
 import { useState } from 'preact/hooks';
 import Details from '../details/details';
+import apiService from '../../services/api';
+import GetNewOrder from '../new-orders/get-new-orders';
+import { price } from '../../data.json';
 
 const AddOrder = (props) => {
   const [render, setRender] = useState(false);
@@ -25,7 +28,6 @@ const AddOrder = (props) => {
     tikhu_chavanu: '',
     nankhatai: '',
     pista_biscuits: '',
-    pista_biscuit: '',
     cholafali: '',
     mathiya: '',
   });
@@ -39,18 +41,25 @@ const AddOrder = (props) => {
   }
 
   return (
-    <div className={style.container} >
-      {Object.entries(form).map(([key, val]) => {
-        return (<OrderItem
-          field={key}
-          value={val}
-          label={key.split("_").join(" ")}
-          handler={handleInput}
-        />)
-      })}
-      <button onClick={handleSubmit}>Submit</button>
-      {render && <div className={style.print}>
-        <Details data={form} />
+    <div>
+      <div className={style.container} >
+        <div className={style.child}>
+          {Object.entries(form).map(([key, val]) => {
+            return (<OrderItem
+              field={key}
+              value={val}
+              label={key.split("_").join(" ")}
+              handler={handleInput}
+            />)
+          })}
+          <button onClick={handleSubmit}>Submit</button>
+        </div>
+        <div style="margin-left:100px; margin-top: -1rem;">
+          <GetNewOrder />
+        </div>
+      </div>
+      {render && <div>
+        <Details data={form} url="/add-order" submitApi={() => apiService.addNewOrder(form)} />
       </div>}
     </div>
   )
@@ -68,7 +77,7 @@ const OrderItem = (props) => {
     <div className={style.grid}>
       <label htmlFor={label}><strong>{label}</strong></label>
       <input onKeyUp={(e) => handler(field, e.target.value)} value={value || ""} placeholder={label} type={type} />
-      <p>Total</p>
+      {field !== 'mobile' && field !== 'name' && value && <p> = {value * price[field] * 2} Rs.</p>}
     </div>
   )
 }
