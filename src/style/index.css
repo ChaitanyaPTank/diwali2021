@@ -4,7 +4,7 @@ html, body {
   padding: 0;
   margin: 0;
   background: #ffffff;
-  font-family: 'Inconsolata', monospace;
+  font-family: 'Roboto', sans-serif;
   font-weight: 400;
   color: #333;
   -webkit-font-smoothing: antialiased;
@@ -21,15 +21,19 @@ html, body {
     margin: 5mm;
     color: #333;
   }
+
   .print {
     width: 100mm;
   }
+
   .header {
     display: none;
   }
+
   button {
     display: none;
   }
+
   .expand {
     display: none;
   }

@@ -1,24 +1,22 @@
 {
-	"price": {
-		"kaju_mesub": 450,
-		"kaju_kasata": 400,
-		"kaju_katri": 360,
-		"anjeer_patra": 400,
-		"surti_ghari": 320,
-		"ghughra": 210,
-		"khajur_roll": 200,
-		"adadiya": 200,
-		"mohanthal": 150,
-		"sata": 100,
-		"pauva_chevdo": 75,
-		"tikha_gathiya": 80,
-		"flower_gathiya": 80,
-		"alu_sev": 80,
-		"tikhi_papdi": 90,
-		"tikhu_chavanu": 80,
-		"nankhatai": 90,
-		"pista_biscuits": 90,
-		"cholafali": 110,
-		"mathiya": 110
-	}
+  "price": {
+    "adadiya": 200,
+    "mohanthal": 150,
+    "kaju_katri": 360,
+    "sata": 100,
+    "khajur_pak": 200,
+    "methi_pak": 220,
+    "pauva_chevdo": 80,
+    "tikhi_papdi": 100,
+    "tikha_gathiya": 90,
+    "ratlamisev": 100,
+    "flower_gathiya": 90,
+    "tikhu_chavanu": 100,
+    "nankhatai": 110,
+    "pista_biscuit": 100,
+    "mava_chiki": 125,
+    "tal_chiki": 125,
+    "sing_chiki": 125,
+    "topra_chiki": 125
+  }
 }

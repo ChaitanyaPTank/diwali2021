@@ -2,6 +2,7 @@
   list-style: none;
   float: right;
   display: flex;
+  margin: 0.5rem 0;
 }
 
 .top {
@@ -9,7 +10,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0rem 2rem;
+  padding: 0rem 1rem;
   margin-bottom: 0.5rem;
   border-radius: 4px;
 }
@@ -22,13 +23,16 @@ li {
   height: 32px;
   justify-content: center;
   align-items: center;
-  margin: 2px 2px;
+  margin: 0px 4px 0px 0px;
+  border-radius: 4px;
   cursor: pointer;
 }
 
-input {
+.searchIp input {
+  color: #087bff;
   height: 32px;
   border: none;
   padding: 0.5rem;
   border-radius: 4px;
+  margin-bottom: 0;
 }

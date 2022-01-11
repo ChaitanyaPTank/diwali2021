@@ -8,7 +8,6 @@ const Stock = () => {
   useEffect(() => {
     (async () => {
       const result = await apiService.getStock();
-      console.log(result);
       if (result.data) {
         setStock(Object.entries(result.data.stock).map(([key, val], index) => {
           return (

@@ -1,5 +1,5 @@
 .home {
-  padding: 56px 20px;
+  padding: 64px 20px;
   min-height: 100%;
   width: 100%;
 }
@@ -19,9 +19,11 @@
   header {
     display: none;
   }
+
   button {
     display: none;
   }
+
   .expand {
     display: none;
   }

@@ -19,7 +19,7 @@ input {
 
 .grid {
   display: grid;
-  grid-template-columns: 140px 150px 100px;
+  grid-template-columns: 140px 200px 100px;
 }
 
 p {
@@ -34,4 +34,10 @@ button {
   border: none;
   margin: 0.35rem 0rem 0rem 0rem;
   border-radius: 4px;
+}
+
+@media print {
+  span {
+    display: block;
+  }
 }

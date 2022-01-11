@@ -4,7 +4,6 @@ import { price } from '../../data.json';
 
 const Details = (props) => {
   const { data, orderStatus, submitApi } = props;
-  console.log(data);
   const { name, mobile, ...rest } = data;
   const [order, setOrder] = useState([]);
   const [total, setTotal] = useState(0);
