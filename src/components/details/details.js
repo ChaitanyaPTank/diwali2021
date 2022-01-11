@@ -13,8 +13,8 @@ const Details = (props) => {
     const { code, result } = await submitApi();
     console.log({ code, result });
     if (code === 200) {
-      setStatus(true);
       window.print();
+      setStatus(true);
     }
   }
 

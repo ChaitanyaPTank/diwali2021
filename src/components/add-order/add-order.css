@@ -37,7 +37,7 @@ button {
 }
 
 @media print {
-  span {
-    display: block;
+  .container {
+    display: none;
   }
 }
