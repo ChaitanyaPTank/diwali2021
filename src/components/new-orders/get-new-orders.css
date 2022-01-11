@@ -11,7 +11,7 @@
 }
 
 @media print {
-	span, .search {
+	.search {
 		display: none;
 	}
 }

@@ -21,6 +21,9 @@ html, body {
     margin: 5mm;
     color: #333;
   }
+  .print {
+    width: 100mm;
+  }
   .header {
     display: none;
   }

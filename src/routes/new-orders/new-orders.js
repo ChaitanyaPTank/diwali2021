@@ -8,7 +8,9 @@ const NewOrder = (props) => {
   return (
     <div className={style.container}>
       <div>
-        <AddOrder />
+        <span>
+          <AddOrder />
+        </span>
       </div>
       <div>
         <GetNewOrder />

@@ -5,7 +5,7 @@
 }
 
 @media print {
-  button, .grid, .expand, .top {
+  span, button, .grid, .expand, .top {
     display: none;
   }
 }

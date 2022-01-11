@@ -56,9 +56,10 @@ const AddOrder = (props) => {
           <button onClick={handleSubmit}>Submit</button>
         </div>
       </div>
-      {render && <div className={style.child}>
-        <Details data={form} url="/add-order" submitApi={() => apiService.addNewOrder(form)} />
-      </div>}
+      {render
+        && <div className={style.child}>
+          <Details data={form} url="/add-order" submitApi={() => apiService.addNewOrder(form)} />
+        </div>}
     </div>
   )
 }
