@@ -1,3 +1,4 @@
+import { MenuItem, Select } from "@mui/material";
 import { useEffect, useState } from "preact/hooks";
 import { price } from '../../data.json';
 
@@ -16,7 +17,7 @@ export const Suggestions = (props) => {
   }, [included]);
   return (
     <>
-      <select value={''} onChange={(e) => setOrderState(0, e.target.value)}>
+      <select style={{ height: '24px' }} value={''} onChange={(e) => setOrderState(0, e.target.value)}>
         {suggestions.map(e => <option value={e}>{e.split('_').join(' ').toUpperCase()}</option>)}
       </select>
     </>
