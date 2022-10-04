@@ -14,11 +14,7 @@ const Home = () => {
   useEffect(() => {
     const getOrders = async () => {
       const { data } = await apiService.getOrders({ limit, search, ordered: searchOrdered });
-      setData(data.map((item, index) => {
-        return (
-          <Order item={item} index={index} key={index} />
-        )
-      }));
+      setData(data);
     };
     getOrders();
 
@@ -44,7 +40,9 @@ const Home = () => {
       <SearchBar handlers={{ handleSearch, setLimit, toggleOrdered, searchOrdered }} />
       {data.length
         ? <div className={style.tabl}>
-          {data}
+          {data && data.map(
+            (order, index) => <Order item={order} index={index} key={index} />
+          )}
         </div>
         : "No order found"}
     </div >

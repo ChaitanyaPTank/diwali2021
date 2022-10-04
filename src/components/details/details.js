@@ -13,14 +13,15 @@ const Details = (props) => {
     const { code, result } = await submitApi();
     console.log({ code, result });
     if (code === 200) {
-      window.print();
       setStatus(true);
+      window.print();
     }
   }
 
   useEffect(() => {
     let total = 0;
     setOrder(Object.entries(rest).map(([item, weight]) => {
+      console.log({ item, weight });
       if (weight) {
         total += weight * price[item] * 2;
         return (

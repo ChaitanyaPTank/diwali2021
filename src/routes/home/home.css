@@ -5,6 +5,8 @@
 }
 
 .tabl {
+  width: 50%;
+  margin: auto;
   background-color: #e0e0e0;
   padding: 0.5rem;
   border-radius: 4px;
