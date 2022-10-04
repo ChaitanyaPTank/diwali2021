@@ -46,7 +46,11 @@
     background-color: #ffffff;
   }
 
-  button, .grid, .expand, .top {
+  button,
+  select,
+  .grid,
+  .expand,
+  .top {
     display: none;
   }
 }

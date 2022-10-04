@@ -10,7 +10,6 @@ const Order = (props) => {
 
   return (
     < div >
-      {console.log({ orderData })}
       <div className={ordered ? style.isordered : style.order}>
         <div className={style.grid}>
           <p className={style.row}>{index + 1}</p>
@@ -31,7 +30,8 @@ const Order = (props) => {
         && <Details
           data={orderData}
           orderStatus={ordered}
-          submitApi={() => apiService.submitOrder(_id)}
+          id={_id}
+          submitApi={apiService.submitOrder}
         />
       }
     </div >

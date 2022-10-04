@@ -60,8 +60,8 @@ export default {
     return await result.json();
   },
 
-  submitOrder: async (id) => {
-    const result = await options.post(`${URL}/submit-order`, { id });
+  submitOrder: async (id, data) => {
+    const result = await options.post(`${URL}/submit-order`, { id, order: data });
     console.log(result);
     return { code: result.status, result: await result.json() };
   },
