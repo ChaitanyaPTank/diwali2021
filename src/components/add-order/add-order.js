@@ -6,36 +6,11 @@ import { price } from '../../data.json';
 
 const AddOrder = (props) => {
   const [render, setRender] = useState(false);
+  const [data, setData] = useState({});
   const [form, setForm] = useState({
     name: '',
     mobile: '',
-    sata: '',
-    mohanthal: '',
-    magas: '',
-    gulab_jamun: '',
-    motichur_ladu: '',
-    churma_ladu: '',
-    dudh_na_penda: '',
-    surti_ghari: '',
-    kaju_katri: '',
-    kaju_mesub: '',
-    pauva_chavdo: '',
-    bhanagari_gathiya: '',
-    tikha_ganthiya: '',
-    naylon_ganthiya: '',
-    ratlami_sev: '',
-    tikhi_papdi: '',
-    moli_papdi: '',
-    sev_regular: '',
-    khari: '',
-    dry_kachori: '',
-    fulvadi: '',
-    nadiyadi_chavanu: '',
-    navratna_chavanu: '',
-    nankhatai: '',
-    dry_fruit_biscuit: '',
-    badam_biscuit: '',
-    black_berry_biscuit: '',
+    ...Object.entries(price).sort().reduce((acc, [k]) => { acc[k] = ''; return acc }, {})
   });
   const excluded = ['name', 'mobile']
 
@@ -44,6 +19,10 @@ const AddOrder = (props) => {
   }
 
   const handleSubmit = () => {
+    const { name, mobile } = form;
+    const finalData = Object.entries(form).filter(([k, v]) => v).reduce((acc, [k, v]) => { acc[k] = v; return acc }, {});
+    console.log({ ...finalData, name, mobile });
+    setData(finalData);
     setRender(true);
   }
 
@@ -65,7 +44,7 @@ const AddOrder = (props) => {
       </div>
       {render
         && <div className={style.child}>
-          <Details data={form} url="/add-order" submitApi={() => apiService.addNewOrder(form)} />
+          <Details data={data} url="/add-order" submitApi={() => apiService.addNewOrder(form)} />
         </div>}
     </div>
   )

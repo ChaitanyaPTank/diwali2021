@@ -18,7 +18,11 @@ export const Suggestions = (props) => {
   return (
     <>
       <select style={{ height: '24px' }} value={''} onChange={(e) => setOrderState(0, e.target.value)}>
-        {suggestions.map(e => <option value={e}>{e.split('_').join(' ').toUpperCase()}</option>)}
+        {suggestions
+          .sort()
+          .map(e => <option value={e}>
+            {e.split('_').join(' ').toUpperCase()}
+          </option>)}
       </select>
     </>
   )
