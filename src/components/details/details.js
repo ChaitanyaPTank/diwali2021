@@ -43,7 +43,6 @@ const Details = (props) => {
   }
 
   useEffect(() => {
-    console.log({ orderState });
     let total = 0;
     setOrder(
       Object.entries(orderState).map(([item, weight]) => {

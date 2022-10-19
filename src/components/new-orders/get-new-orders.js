@@ -25,7 +25,6 @@ const GetNewOrder = () => {
   useEffect(() => {
     const getOrders = async () => {
       const { data } = await apiService.getNewOrders({ limit, search });
-      console.log(data);
       setData(data.map((item, index) => {
         return (
           <Order item={item} index={index} key={index} />

@@ -1,7 +1,7 @@
 // const URL = 'http://192.168.0.100:8085'
 // const URL = 'https://backend2021.eu-gb.mybluemix.net'
 
-const URL = 'http://192.168.0.104:8085'
+const URL = 'http://localhost:8085'
 
 const headers = {
   "Content-Type": "application/json",
