@@ -1,7 +1,7 @@
 import { useState, useEffect } from "preact/hooks";
 import style from './details.css';
 import { price } from '../../data.json';
-import { Suggestions } from "../suggestions/Suggestions";
+import { Suggestions } from "../suggestions/suggestions";
 
 const DEL_STYLE = {
   margin: '0px',
@@ -25,7 +25,7 @@ const Details = (props) => {
 
   const handleSubmitOrder = async () => {
     console.log('submitBro')
-    const { code, result } = await submitApi(id, orderState);
+    const { code, _result } = await submitApi(id, orderState);
     console.log(rest)
     if (code === 200) {
       setStatus(true);
@@ -63,7 +63,7 @@ const Details = (props) => {
                     X
                   </button>
                 </>
-                : <span style={{ width: '50px' }}> {weight} Kg </span>}
+                : <span style={{ width: '50px' }}> {weight} {item === 'swami_rotli' ? 'No' : 'Kg'} </span>}
               = {weight ? (weight * price[item] * 2) : 0} Rs
             </p>
           )

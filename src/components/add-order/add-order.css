@@ -19,7 +19,7 @@ input {
 
 .grid {
   display: grid;
-  grid-template-columns: 140px 200px 100px;
+  grid-template-columns: 180px 200px 100px;
 }
 
 p {

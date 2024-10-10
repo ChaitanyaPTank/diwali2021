@@ -3,7 +3,7 @@ import Details from '../details/details';
 import apiService from '../../services/api';
 import style from './order.css';
 
-const Order = (props) => {
+export const Order = (props) => {
   const { item, index } = props;
   const { _id, ordered, ...orderData } = item;
   const [isOrderVisible, setVisibility] = useState(false);
@@ -13,7 +13,7 @@ const Order = (props) => {
       <div className={ordered ? style.isordered : style.order}>
         <div className={style.grid}>
           <p className={style.row}>{index + 1}</p>
-          <p className={style.row}>{item.name.toLowerCase()}</p>
+          <p className={style.row}>{(item.name || "").toLowerCase()}</p>
           <p className={style.row}>{item.mobile || '-'}</p>
         </div>
         <div
